@@ -58,18 +58,32 @@ body {
   box-shadow: 0 0 10px rgba(128, 96, 22, 0.32);
 }
 
-/* messages */
+/* messages bubble*/
 .msg {
+  display: block;
+  width: fit-content;
+  max-width: 78%;
   margin-bottom: 14px;
+  padding: 12px 14px;
   line-height: 1.5;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 8px rgba(128, 96, 22, 0.14);
+  word-break: break-word;
 }
 
 .msg.user {
-  color: #000;
+  margin-left: auto;
+  color: #1f1f1f;
+  background: #f2e0b8;
+  border-color: rgba(227, 166, 53, 0.55);
 }
 
-.msg.ai {
-  color: #666666;
+.msg.assistant {
+  margin-right: auto;
+  color: #2f2f2f;
+  background: #ffffff;
+  border-color: rgba(128, 96, 22, 0.2);
 }
 
 /* input row */
