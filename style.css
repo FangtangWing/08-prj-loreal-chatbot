@@ -51,19 +51,11 @@ body {
   margin: 0 auto 14px;
 }
 
-.brand-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--ink-soft);
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-
 .site-title {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 42px;
-  font-weight: 700;
-  color: var(--brand-black);
+  font-weight: 500;
+  color: var(--ink-soft);
   letter-spacing: 0.02em;
   margin-bottom: 10px;
 }
@@ -152,25 +144,6 @@ body {
   outline-offset: 2px;
 }
 
-.brand-insight {
-  border-top: 1px solid var(--panel-border);
-  margin: 10px 0 0;
-  padding: 24px 0 8px;
-}
-
-.brand-insight h2 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.brand-insight p {
-  color: #2e2920;
-  line-height: 1.65;
-  margin-bottom: 12px;
-}
-
 /* visually hidden */
 .visually-hidden {
   position: absolute;
@@ -225,9 +198,5 @@ body {
     height: 330px;
     font-size: 16px;
     padding: 14px;
-  }
-
-  .brand-insight h2 {
-    font-size: 26px;
   }
 }
