@@ -7,7 +7,7 @@ async function initChat() {
   // All frontend requests go through the Cloudflare Worker endpoint.
   const workerApiUrl = "https://chatbot-worker.3248613716.workers.dev";
   const prompt =
-    "You are a L'Oreal beauty advisor chatbot. Only answer questions about L'Oreal products, routines, and recommendations. If a question is not related to L'Oreal beauty topics, politely refuse and ask the user to ask about L'Oreal products or routines.";
+    "You are a L'Oreal beauty advisor chatbot. You only answer questions about L'Oreal products, routines, and recommendations. If a question is not related to L'Oreal beauty topics, politely refuse and ask the user to ask about L'Oreal products or routines.";
 
   const messages = [
     {
@@ -18,7 +18,7 @@ async function initChat() {
 
   function addChatMessage(role, content) {
     const messageEl = document.createElement("div");
-    messageEl.classList.add("msg", role === "user" ? "user" : "assistant");
+    messageEl.classList.add("message", role === "user" ? "user" : "assistant");
     messageEl.textContent = `${role === "user" ? "You" : "AI Advisor"}: ${content}`;
     chatWindow.appendChild(messageEl);
     chatWindow.scrollTop = chatWindow.scrollHeight;
