@@ -4,9 +4,10 @@ async function initChat() {
   const userInput = document.getElementById("userInput");
   const chatWindow = document.getElementById("chatWindow");
 
-  const openaiApiUrl = "https://api.openai.com/v1/chat/completions";
+  // All frontend requests go through the Cloudflare Worker endpoint.
+  const workerApiUrl = "https://chatbot-worker.3248613716.workers.dev";
   const prompt =
-        "You are a L'Oreal beauty advisor chatbot. Only answer questions about L'Oreal products, routines, and recommendations. If a question is not related to L'Oreal beauty topics, politely refuse and ask the user to ask about L'Oreal products or routines.";
+    "You are a L'Oreal beauty advisor chatbot. Only answer questions about L'Oreal products, routines, and recommendations. If a question is not related to L'Oreal beauty topics, politely refuse and ask the user to ask about L'Oreal products or routines.";
 
   const messages = [
     {
@@ -46,14 +47,12 @@ async function initChat() {
     });
 
     try {
-      const response = await fetch(openaiApiUrl, {
+      const response = await fetch(workerApiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "gpt-4o",
           messages: messages,
         }),
       });
@@ -76,7 +75,7 @@ async function initChat() {
         "assistant",
         "Sorry, I could not get a response right now. Please try again.",
       );
-      console.error("OpenAI request error:", error);
+      console.error("Cloudflare Worker request error:", error);
     }
   });
 }
